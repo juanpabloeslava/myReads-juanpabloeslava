@@ -12,7 +12,9 @@ class Home extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf />
+            <BookShelf title="Currently Reading"/>
+            <BookShelf title="Want to Read"/>
+            <BookShelf title="Finished Reading"/>
           </div>
         </div>
         <AddBook />
