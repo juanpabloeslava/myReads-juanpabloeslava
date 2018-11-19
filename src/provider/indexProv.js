@@ -12,7 +12,21 @@ class index extends Component {
             books: [],
             currentlyReading: [],
             read: [],
-            wantToRead: []
+            wantToRead: [],
+            // method to add books
+            fillShelves: allBooks => {
+                const currentlyReading = allBooks.filter( book => (book.shelf === 'currentlyReading'));
+                const wantToRead = allBooks.filter( book => (book.shelf === 'wantToRead'));
+                const read = allBooks.filter( book => (book.shelf === 'read'));
+                // update the Component's state with the books
+                this.setState( {
+                    // each item will go to each state key, in the same order the keys are set
+                    allBooks,
+                    currentlyReading,
+                    read,
+                    wantToRead
+                });
+            }
         }
     }
 
