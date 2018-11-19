@@ -33,7 +33,7 @@ class index extends Component {
     render() {
         return (
             // Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
-            // One Provider can be connected to many consumers
+            // One Provider can be connected to many consumers. 
             <JpContext.Provider value={{ ...this.state }}>
                 {this.props.children}
             </JpContext.Provider>

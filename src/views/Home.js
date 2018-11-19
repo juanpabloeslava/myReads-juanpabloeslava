@@ -27,9 +27,18 @@ class Home extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <BookShelf title="Currently Reading"/>
-            <BookShelf title="Want to Read"/>
-            <BookShelf title="Read"/>
+            <BookShelf 
+              title="Currently Reading"
+              books={this.props.currentlyReading}
+            />
+            <BookShelf 
+              title="Want to Read"
+              books={this.props.wantToRead}
+            />
+            <BookShelf 
+              title="Read"
+              books={this.props.read}
+            />
           </div>
         </div>
         <AddBook />
