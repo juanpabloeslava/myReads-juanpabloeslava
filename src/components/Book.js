@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
+import * as BooksAPI from '../BooksAPI';
 
 class Book extends Component {
 
   // Method: move books between shelves
   changeShelf = (event) => {
-    // just to try
-    console.log (event.target.value);
+    const shelf = event.target.value;
+    const book = this.props;
+    // use the update method from the API
+    BooksAPI.update(book, shelf)
+      .then( result => {
+        console.log (result);
+      })
+      .catch ( error => {
+        console.log (error);
+      });
   }
 
   render() {

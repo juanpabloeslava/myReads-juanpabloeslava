@@ -9,10 +9,8 @@ class Home extends Component {
     // get all books from the API
     BooksAPI.getAll()
       .then ( allBooks => {
-        console.log ('all books: ', allBooks);
         // organize books in their respective shelves
         this.props.fillShelves(allBooks);
-
       })
       .catch ( error => {
         console.log (error);
