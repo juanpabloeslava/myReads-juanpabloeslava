@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 
 class Book extends Component {
 
+  // Method: move books between shelves
+  changeShelf = (event) => {
+    // just to try
+    console.log (event.target.value);
+  }
+
   render() {
     return (
       <li>
@@ -13,7 +19,7 @@ class Book extends Component {
               backgroundImage: `url(${this.props.imageLinks.thumbnail})` 
             }}></div>
             <div className="book-shelf-changer">
-              <select>
+              <select onChange={this.changeShelf}>
                 <option value="move" disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
@@ -28,7 +34,6 @@ class Book extends Component {
       </li>
     )
   }
-
 }
 
 export default Book;
