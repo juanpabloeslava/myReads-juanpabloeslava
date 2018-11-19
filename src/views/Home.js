@@ -6,13 +6,12 @@ import * as BooksAPI from '../BooksAPI';
 class Home extends Component {
 
   componentDidMount () {
-    
     // get all books from the API
     BooksAPI.getAll()
       .then ( allBooks => {
         console.log (allBooks);
       })
-      .catch ( (error) => {
+      .catch ( error => {
         console.log (error);
       });
   }
@@ -27,7 +26,7 @@ class Home extends Component {
           <div>
             <BookShelf title="Currently Reading"/>
             <BookShelf title="Want to Read"/>
-            <BookShelf title="Finished Reading"/>
+            <BookShelf title="Read"/>
           </div>
         </div>
         <AddBook />
