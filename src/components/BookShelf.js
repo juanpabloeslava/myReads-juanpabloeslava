@@ -9,7 +9,13 @@ class BookShelf extends Component {
         <h2 className="bookshelf-title">{ this.props.title }</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            <Book />
+            { 
+              // If there are books in the shelf (passed as a prop back in 'Home.js')
+              this.props.books && 
+              // map to show just the correct ones for each shelf
+              this.props.books.map( book => 
+              <Book key={book.id} { ...book }/> )
+            }
           </ol>
         </div>
       </div>
